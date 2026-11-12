@@ -58,16 +58,19 @@ export class LaTexFormatter {
         });
     }
     private checkPath(checker: string): Thenable<boolean> {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             cp.exec(checker + ' ' + this.formatter, (err, stdout, stderr) => {
-                if (stdout == '') {
-                    this.formatter += this.current_os.file_ext;
-                    this.checkPath(checker).then((res) => {
-                        if (res) resolve(true);
-                        else resolve(false);
-                    });
+                if (err || stdout == '') {
+                    // Not found: try once with the OS-specific extension, then give up.
+                    if (!this.formatter.endsWith(this.current_os.file_ext)) {
+                        this.formatter += this.current_os.file_ext;
+                        this.checkPath(checker).then(resolve);
+                    } else {
+                        resolve(false);
+                    }
+                } else {
+                    resolve(true);
                 }
-                resolve(true);
             });
         })
 
