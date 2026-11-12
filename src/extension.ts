@@ -34,7 +34,6 @@ export class LaTexFormatter {
     }
     public formatDocument(document: vscode.TextDocument): Thenable<vscode.TextEdit[]> {
         return new Promise((resolve, reject) => {
-            let formatter = 'latexindent';
             let filename = document.fileName;
 
             if (this.machine_os == windows.name) {
