@@ -1,5 +1,5 @@
 out
 node_modules
 .vscode-test
-latex-formatter-1.0.5.vsix
 package-lock.json
+latex-formatter-**

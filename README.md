@@ -47,32 +47,3 @@ Reference for the following guides: [latexindent.pl - Documentation](https://git
     ```
     to check if **latexindent** was correctly installed
 
-## Release Notes
-### 1.0.5
-
-filenames with spaces are now supported
-
-### 1.0.4
-
-added mac support
-
-### 1.0.3
-
-Fixed typos
-
-### 1.0.2
-
-Added windows support
-
-### 1.0.1
-
-Updated readme
-
-### 1.0.0
-
-Initial release
-
-## Roadmap
-
-- Style options
-

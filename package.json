@@ -3,11 +3,10 @@
     "displayName": "latex-formatter",
     "description": "Simple LaTex formatter.",
     "icon": "img/icon.png",
-    "version": "1.0.5",
-    "publisher": "nickfode",
+    "version": "1.0.6",
     "repository": {
         "type": "git",
-        "url": "https://github.com/nfode/latex-formatter"
+        "url": "https://github.com/krzysztofWal/latex-formatter"
     },
     "engines": {
         "vscode": "^1.146.0"
@@ -19,6 +18,7 @@
     "activationEvents": [
         "onLanguage:latex"
     ],
+
     "main": "./out/src/extension",
     "contributes": {
         "languages": [
@@ -32,12 +32,22 @@
         "capabilities": {
             "documentFormattingProvider": "true"
         },
-        "commands": [
-            {
-                "command": "extension.sayHello",
-                "title": "Hello World"
+        "configuration": {
+            "type": "object",
+            "title": "LaTeX Formatter",
+            "properties": {
+                "latex-formatter.optionalCondaEnv": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Optional conda environment to use for the formatter."
+                },
+                "latex-formatter.condaExecutable": {
+                    "type": "string",
+                    "default": "conda",
+                    "description": "Conda-compatible executable used to run the formatter (e.g. \"conda\" or \"mamba\"). Only used when optionalCondaEnv is set."
+                }
             }
-        ]
+        }
     },
     "scripts": {
         "esbuild": "node esbuild.js",

@@ -1,6 +1,13 @@
 # Change Log
 All notable changes to the "latex-formatter" extension will be documented in this file.
 
+## 1.0.6
+### Fixed
+- checking path (without present executable) seemed to go into a recursive loop - it does not now
+### Added
+- possibility of using formatter installed inside mamba/conda environment 
+- basic loggin in the Outpu -> latex-formatter window
+
 ## 1.0.5 - 2017-05-17
 ### Changed
 - Filenames with spaces are now allowed
